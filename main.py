@@ -4,6 +4,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.output_parsers import PydanticOutputParser
 from langgraph.prebuilt import create_react_agent
 from tools import tools as agent_tools
+from tools import save_to_txt
 
 load_dotenv()
 
@@ -19,6 +20,7 @@ parser = PydanticOutputParser(pydantic_object=ResearchResponse)
 system_prompt = """
 You are a research assistant that will help generate a research paper.
 Answer the user query and use necessary tools.
+Always save your final research output to a file using the save_to_txt tool.
 Wrap the output in this format and provide no other text\n{format_instructions}
 """.format(format_instructions=parser.get_format_instructions())
 
@@ -34,5 +36,6 @@ raw_response = agent.invoke({"messages": [("human", query)]})
 try:
     structured_response = parser.parse(raw_response["messages"][-1].content)
     print(structured_response)
+    save_to_txt(structured_response.model_dump_json(indent=2))
 except Exception as e:
     print("Error parsing response", e, "Raw Response - ", raw_response)

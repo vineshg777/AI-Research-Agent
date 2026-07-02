@@ -1,0 +1,19 @@
+--- Research Output ---
+Timestamp: 2026-07-02 19:11:33
+
+{
+  "topic": "Pizza",
+  "summary": "Pizza is a globally renowned food that originated in Naples, Italy, evolving from simple flatbreads topped with cheese and tomato into a wide array of styles and flavors around the world. Various regional variations include New York-style, Chicago deep-dish, and St. Louis pizza. It has become a staple in many cultures and is celebrated for its versatility in toppings and cooking methods, often reflecting local ingredients and culinary traditions.",
+  "sources": [
+    "https://en.wikipedia.org/wiki/Pizza",
+    "https://us.gozney.com/blogs/news/different-types-of-pizza-explained",
+    "https://en.wikipedia.org/wiki/History_of_pizza",
+    "https://www.petesbrewhouse.com/blog/38-the-history-of-good-pizza",
+    "https://www.webmd.com/food-recipes/what-is-pizza-made-of"
+  ],
+  "tools_used": [
+    "get_topic_summary",
+    "get_academic_sources"
+  ]
+}
+
